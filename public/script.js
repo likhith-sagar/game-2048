@@ -6,10 +6,11 @@ let scoreBox = document.querySelector(".score");
 
 let bwidth, bheight; //box measurements
 let mh, mw; //block measurements
-let tempn = window.location.search? Number(window.location.search.split("=")[1]) : 4;
+let url = new URL(window.location)
+let tempn = url.searchParams.has('n') ? Number(url.searchParams.get('n')) : 4;
 console.log(tempn);
-tempn = tempn<2?2:tempn;
-tempn = tempn>10?10:tempn;
+tempn = tempn < 2 ? 2 : tempn;
+tempn = tempn > 10 ? 10 : tempn;
 let n = tempn //num of blocks per row
 let tgap = 100;
 
